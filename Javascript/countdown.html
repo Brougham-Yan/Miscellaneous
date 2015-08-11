@@ -1,0 +1,56 @@
+#This is a simple function to return the time remaining until the target event, for this example New Year's day 2016
+#as well as a function to return a random banner image from a pool
+<html>
+<body style="background-color:#98E5E5;">
+<p style="text-align:center;">
+<script type="text/javascript">
+
+var d=new Date(); //today's date
+var target=new Date ("January 1, 2016 00:00:00"); //target date, new years
+x = d.getTime(); //sets the current time in milliseconds
+y = target.getTime(); //sets the target's time in milliseconds
+z = y - x; //milliseconds to the target
+
+var z;
+var y;
+var x;
+var days;
+var hours;
+var minutes;
+var seconds;
+var second;
+var minute;
+
+days = z / 86400000; //converts milliseconds to days
+hours = z % 86400000; //modulos to have milliseconds to the target - days to the hobbit
+hours = hours / 3600000; //converts to hours
+minutes = z % 3600000;// modulos to have milliseconds to the target - hours to the target
+minutes = minutes / 60000;//converts to minutes
+seconds = z % 60000;//modulos to have milliseconds to the target - minutes to the target
+seconds = seconds / 1000;
+second = z / 1000; //seconds
+minute = second / 60;
+
+
+
+minute = Math.floor(minute);
+second = Math.floor(second); //removes the decimal
+days = Math.floor(days);
+hours = Math.floor(hours);
+minutes = Math.floor(minutes);
+seconds = Math.floor(seconds);
+document.write( "2016 starts in " + days + " days," + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds.<br />");
+
+
+//BONUS: pulls a random banner image from a set pool
+var bannerNumber;
+bannerNumber = Math.floor((Math.random()* 22)+1);//22 is # of pics in the rotation
+
+
+var banner;//<img> tag of the banner to display	
+banner = '<img src="/*location of the banner directory*/' + phrase + '.png" alt="missing picture ' + phrase + '" />';
+document.write(banner);
+</script>
+</p>
+</body>
+
